@@ -1,0 +1,421 @@
+{
+    "compilation.bench_example_load.SlowExampleAnymalFeatherstone.time_load": {
+        "code": "class SlowExampleAnymalFeatherstone:\n    @skip_benchmark_if(wp.get_cuda_device_count() == 0)\n    def time_load(self):\n        \"\"\"Time the amount of time it takes to load and run one frame of the example.\"\"\"\n    \n        command = [\n            sys.executable,\n            \"-m\",\n            \"newton.examples.example_anymal_c_walk\",\n            \"--stage-path\",\n            \"None\",\n            \"--num-frames\",\n            \"1\",\n            \"--headless\",\n        ]\n    \n        # Run the script as a subprocess\n        result = subprocess.run(command, capture_output=True, text=True, check=True)\n    \n        print(f\"Output:\\n{result.stdout}\\n{result.stderr}\")\n\n    def setup(self):\n        wp.build.clear_lto_cache()\n        wp.build.clear_kernel_cache()",
+        "min_run_count": 2,
+        "name": "compilation.bench_example_load.SlowExampleAnymalFeatherstone.time_load",
+        "number": 1,
+        "param_names": [],
+        "params": [],
+        "repeat": 2,
+        "rounds": 2,
+        "sample_time": 0.01,
+        "timeout": 600,
+        "type": "time",
+        "unit": "seconds",
+        "version": "11668502f2030fd0f99c98b9180b047901912cae6820bbc6938473fad27b377b",
+        "warmup_time": 0
+    },
+    "compilation.bench_example_load.SlowExampleCartpoleMuJoCo.time_load": {
+        "code": "class SlowExampleCartpoleMuJoCo:\n    @skip_benchmark_if(wp.get_cuda_device_count() == 0)\n    def time_load(self):\n        \"\"\"Time the amount of time it takes to load and run one frame of the example.\"\"\"\n    \n        command = [\n            sys.executable,\n            \"-m\",\n            \"newton.examples.example_cartpole\",\n            \"--stage-path\",\n            \"None\",\n            \"--num-frames\",\n            \"1\",\n            \"--no-use-cuda-graph\",\n        ]\n    \n        # Run the script as a subprocess\n        result = subprocess.run(command, capture_output=True, text=True, check=True)\n    \n        print(f\"Output:\\n{result.stdout}\\n{result.stderr}\")\n\n    def setup(self):\n        wp.build.clear_lto_cache()\n        wp.build.clear_kernel_cache()",
+        "min_run_count": 2,
+        "name": "compilation.bench_example_load.SlowExampleCartpoleMuJoCo.time_load",
+        "number": 1,
+        "param_names": [],
+        "params": [],
+        "repeat": 2,
+        "rounds": 2,
+        "sample_time": 0.01,
+        "timeout": 600,
+        "type": "time",
+        "unit": "seconds",
+        "version": "e88481bb6f0f0f3ed340c0aa75931edef556f431f92b816c869db6d8f6997688",
+        "warmup_time": 0
+    },
+    "compilation.bench_example_load.SlowExampleClothManipulation.time_load": {
+        "code": "class SlowExampleClothManipulation:\n    @skip_benchmark_if(wp.get_cuda_device_count() == 0)\n    def time_load(self):\n        \"\"\"Time the amount of time it takes to load and run one frame of the example.\"\"\"\n    \n        command = [\n            sys.executable,\n            \"-m\",\n            \"newton.examples.example_robot_manipulating_cloth\",\n            \"--stage-path\",\n            \"None\",\n            \"--num-frames\",\n            \"1\",\n        ]\n    \n        # Run the script as a subprocess\n        result = subprocess.run(command, capture_output=True, text=True, check=True)\n    \n        print(f\"Output:\\n{result.stdout}\\n{result.stderr}\")\n\n    def setup(self):\n        wp.build.clear_lto_cache()\n        wp.build.clear_kernel_cache()",
+        "min_run_count": 2,
+        "name": "compilation.bench_example_load.SlowExampleClothManipulation.time_load",
+        "number": 1,
+        "param_names": [],
+        "params": [],
+        "repeat": 2,
+        "rounds": 2,
+        "sample_time": 0.01,
+        "type": "time",
+        "unit": "seconds",
+        "version": "32ca0df93150ccf5d8bddf7194c7fcb598377f5be509bd21b3dd73a187cc0c41",
+        "warmup_time": 0
+    },
+    "compilation.bench_example_load.SlowExampleClothSelfContactVBD.time_load": {
+        "code": "class SlowExampleClothSelfContactVBD:\n    @skip_benchmark_if(wp.get_cuda_device_count() == 0)\n    def time_load(self):\n        \"\"\"Time the amount of time it takes to load and run one frame of the example.\"\"\"\n    \n        command = [\n            sys.executable,\n            \"-m\",\n            \"newton.examples.example_cloth_self_contact\",\n            \"--stage-path\",\n            \"None\",\n            \"--num-frames\",\n            \"1\",\n        ]\n    \n        # Run the script as a subprocess\n        result = subprocess.run(command, capture_output=True, text=True, check=True)\n    \n        print(f\"Output:\\n{result.stdout}\\n{result.stderr}\")\n\n    def setup(self):\n        wp.build.clear_lto_cache()\n        wp.build.clear_kernel_cache()",
+        "min_run_count": 2,
+        "name": "compilation.bench_example_load.SlowExampleClothSelfContactVBD.time_load",
+        "number": 1,
+        "param_names": [],
+        "params": [],
+        "repeat": 2,
+        "rounds": 2,
+        "sample_time": 0.01,
+        "type": "time",
+        "unit": "seconds",
+        "version": "8585e1c3cb1eaa20a967de7d86d4622c035ea131eaf9501a1299fce69c35c4bc",
+        "warmup_time": 0
+    },
+    "compilation.bench_example_load.SlowExampleHumanoidMuJoCo.time_load": {
+        "code": "class SlowExampleHumanoidMuJoCo:\n    @skip_benchmark_if(wp.get_cuda_device_count() == 0)\n    def time_load(self):\n        \"\"\"Time the amount of time it takes to load and run one frame of the example.\"\"\"\n    \n        command = [\n            sys.executable,\n            \"-m\",\n            \"newton.examples.example_humanoid\",\n            \"--stage-path\",\n            \"None\",\n            \"--num-frames\",\n            \"1\",\n            \"--headless\",\n            \"--no-use-cuda-graph\",\n        ]\n    \n        # Run the script as a subprocess\n        result = subprocess.run(command, capture_output=True, text=True, check=True)\n    \n        print(f\"Output:\\n{result.stdout}\\n{result.stderr}\")\n\n    def setup(self):\n        wp.build.clear_lto_cache()\n        wp.build.clear_kernel_cache()",
+        "min_run_count": 2,
+        "name": "compilation.bench_example_load.SlowExampleHumanoidMuJoCo.time_load",
+        "number": 1,
+        "param_names": [],
+        "params": [],
+        "repeat": 2,
+        "rounds": 2,
+        "sample_time": 0.01,
+        "timeout": 600,
+        "type": "time",
+        "unit": "seconds",
+        "version": "3c0a83df9ba9d13667a0e994ad3e0f34934786f3ca8e0d7fd8f97171272d6856",
+        "warmup_time": 0
+    },
+    "compilation.bench_example_load.SlowExampleQuadrupedXPBD.time_load": {
+        "code": "class SlowExampleQuadrupedXPBD:\n    @skip_benchmark_if(wp.get_cuda_device_count() == 0)\n    def time_load(self):\n        \"\"\"Time the amount of time it takes to load and run one frame of the example.\"\"\"\n    \n        command = [\n            sys.executable,\n            \"-m\",\n            \"newton.examples.example_quadruped\",\n            \"--stage-path\",\n            \"None\",\n            \"--num-frames\",\n            \"1\",\n        ]\n    \n        # Run the script as a subprocess\n        result = subprocess.run(command, capture_output=True, text=True, check=True)\n    \n        print(f\"Output:\\n{result.stdout}\\n{result.stderr}\")\n\n    def setup(self):\n        wp.build.clear_lto_cache()\n        wp.build.clear_kernel_cache()",
+        "min_run_count": 2,
+        "name": "compilation.bench_example_load.SlowExampleQuadrupedXPBD.time_load",
+        "number": 1,
+        "param_names": [],
+        "params": [],
+        "repeat": 2,
+        "rounds": 2,
+        "sample_time": 0.01,
+        "timeout": 600,
+        "type": "time",
+        "unit": "seconds",
+        "version": "aa6aae57fec72caf957c2f30db35110a6f937b83fbacf71ef670f3c57297aa19",
+        "warmup_time": 0
+    },
+    "setup.bench_model.FastInitializeModel.peakmem_initialize_model_cpu": {
+        "code": "class FastInitializeModel:\n    def peakmem_initialize_model_cpu(self, robot, num_envs):\n        gc.collect()\n    \n        with wp.ScopedDevice(\"cpu\"):\n            builder = Example.create_model_builder(robot, num_envs, randomize=True, seed=123)\n    \n            # finalize model\n            model = builder.finalize()\n    \n        del model\n\n    def setup_cache(self):\n        # Load a small model to cache the kernels\n        builder = Example.create_model_builder(\"cartpole\", 1, randomize=False, seed=123)\n        model = builder.finalize(device=\"cpu\")\n        del model",
+        "name": "setup.bench_model.FastInitializeModel.peakmem_initialize_model_cpu",
+        "param_names": [
+            "robot",
+            "num_envs"
+        ],
+        "params": [
+            [
+                "'humanoid'",
+                "'g1'",
+                "'h1'",
+                "'cartpole'",
+                "'ant'",
+                "'quadruped'"
+            ],
+            [
+                "128",
+                "256"
+            ]
+        ],
+        "setup_cache_key": "setup.bench_model:58",
+        "type": "peakmemory",
+        "unit": "bytes",
+        "version": "00b15a26b4c43ef2248ee8fe62d371f732257fb3137f06c9097d9acea132204d"
+    },
+    "setup.bench_model.FastInitializeModel.time_initialize_model": {
+        "code": "class FastInitializeModel:\n    @skip_benchmark_if(wp.get_cuda_device_count() == 0)\n    def time_initialize_model(self, robot, num_envs):\n        builder = Example.create_model_builder(robot, num_envs, randomize=True, seed=123)\n    \n        # finalize model\n        _model = builder.finalize()\n        wp.synchronize_device()\n\n    def setup_cache(self):\n        # Load a small model to cache the kernels\n        builder = Example.create_model_builder(\"cartpole\", 1, randomize=False, seed=123)\n        model = builder.finalize(device=\"cpu\")\n        del model",
+        "min_run_count": 1,
+        "name": "setup.bench_model.FastInitializeModel.time_initialize_model",
+        "number": 1,
+        "param_names": [
+            "robot",
+            "num_envs"
+        ],
+        "params": [
+            [
+                "'humanoid'",
+                "'g1'",
+                "'h1'",
+                "'cartpole'",
+                "'ant'",
+                "'quadruped'"
+            ],
+            [
+                "128",
+                "256"
+            ]
+        ],
+        "repeat": 3,
+        "rounds": 1,
+        "sample_time": 0.01,
+        "setup_cache_key": "setup.bench_model:58",
+        "type": "time",
+        "unit": "seconds",
+        "version": "ffaa21a0ae50932fc9968e894d23821a76d4f8f21762bf4f09488a61cd95c4d4",
+        "warmup_time": -1
+    },
+    "setup.bench_model.KpiInitializeModel.time_initialize_model": {
+        "code": "class KpiInitializeModel:\n    @skip_benchmark_if(wp.get_cuda_device_count() == 0)\n    def time_initialize_model(self, robot, num_envs):\n        builder = Example.create_model_builder(robot, num_envs, randomize=True, seed=123)\n    \n        # finalize model\n        _model = builder.finalize()\n        wp.synchronize_device()\n\n    def setup(self, robot, num_envs):\n        wp.init()",
+        "min_run_count": 1,
+        "name": "setup.bench_model.KpiInitializeModel.time_initialize_model",
+        "number": 1,
+        "param_names": [
+            "robot",
+            "num_envs"
+        ],
+        "params": [
+            [
+                "'humanoid'",
+                "'g1'",
+                "'h1'",
+                "'cartpole'",
+                "'ant'",
+                "'quadruped'"
+            ],
+            [
+                "4096",
+                "8192"
+            ]
+        ],
+        "repeat": 3,
+        "rounds": 1,
+        "sample_time": 0.01,
+        "timeout": 1800,
+        "type": "time",
+        "unit": "seconds",
+        "version": "916798ac3c284de170329bf7c2922e5f147d35325fe54719dc7624847692f943",
+        "warmup_time": -1
+    },
+    "simulation.bench_anymal.FastExampleAnymalPretrained.time_simulate": {
+        "code": "class FastExampleAnymalPretrained:\n    @skip_benchmark_if(wp.get_cuda_device_count() == 0)\n    def time_simulate(self):\n        for _ in range(self.num_frames):\n            self.example.step()\n        wp.synchronize_device()\n\n    def setup(self):\n        self.num_frames = 50\n        self.example = Example(stage_path=None, headless=True)",
+        "min_run_count": 2,
+        "name": "simulation.bench_anymal.FastExampleAnymalPretrained.time_simulate",
+        "number": 1,
+        "param_names": [],
+        "params": [],
+        "repeat": 3,
+        "rounds": 2,
+        "sample_time": 0.01,
+        "type": "time",
+        "unit": "seconds",
+        "version": "aa6ffe05b62655a47e4de26509d6100e4a4cf39198ae70560e6d5f790938d201",
+        "warmup_time": -1
+    },
+    "simulation.bench_cloth.FastExampleClothManipulation.time_simulate": {
+        "code": "class FastExampleClothManipulation:\n    @skip_benchmark_if(wp.get_cuda_device_count() == 0)\n    def time_simulate(self):\n        for frame_idx in range(self.num_frames):\n            self.example.step()\n    \n            if self.example.cloth_solver and not (frame_idx % 10):\n                self.example.cloth_solver.rebuild_bvh(self.example.state_0)\n                self.example.capture_cuda_graph()\n    \n        wp.synchronize_device()\n\n    def setup(self):\n        self.num_frames = 30\n        self.example = ExampleClothManipulation(stage_path=None, num_frames=self.num_frames)",
+        "min_run_count": 2,
+        "name": "simulation.bench_cloth.FastExampleClothManipulation.time_simulate",
+        "number": 1,
+        "param_names": [],
+        "params": [],
+        "repeat": 3,
+        "rounds": 2,
+        "sample_time": 0.01,
+        "timeout": 300,
+        "type": "time",
+        "unit": "seconds",
+        "version": "a37772d063751b8d47e417336dcdbfb8dde247f61c518732b7eb5cd63c9f130e",
+        "warmup_time": -1
+    },
+    "simulation.bench_cloth.FastExampleClothSelfContactVBD.time_simulate": {
+        "code": "class FastExampleClothSelfContactVBD:\n    @skip_benchmark_if(wp.get_cuda_device_count() == 0)\n    def time_simulate(self):\n        for i in range(self.num_frames):\n            self.example.step()\n    \n            if (\n                i != 0\n                and not i % self.example.bvh_rebuild_frames\n                and self.example.use_cuda_graph\n                and self.example.solver.handle_self_contact\n            ):\n                self.example.solver.rebuild_bvh(self.example.state_0)\n                with wp.ScopedCapture() as capture:\n                    self.example.simulate_substeps()\n                self.example.cuda_graph = capture.graph\n    \n        wp.synchronize_device()\n\n    def setup(self):\n        self.num_frames = 100\n        self.example = ExampleClothSelfContact(stage_path=None)",
+        "min_run_count": 2,
+        "name": "simulation.bench_cloth.FastExampleClothSelfContactVBD.time_simulate",
+        "number": 1,
+        "param_names": [],
+        "params": [],
+        "repeat": 5,
+        "rounds": 2,
+        "sample_time": 0.01,
+        "type": "time",
+        "unit": "seconds",
+        "version": "bb21dbe8af3ed7c9f5f73d9e3060a070da211554fc6072306bb135e0d88d54f5",
+        "warmup_time": -1
+    },
+    "simulation.bench_mujoco.FastAnt.time_simulate": {
+        "code": "class FastAnt:\n    @skip_benchmark_if(wp.get_cuda_device_count() == 0)\n    def time_simulate(self):\n        for _ in range(self.num_frames):\n            self.example.step()\n        wp.synchronize_device()\n\n    def setup(self):\n        if not hasattr(self, \"builder\") or self.builder is None:\n            self.builder = Example.create_model_builder(self.robot, self.num_envs, randomize=True, seed=123)\n    \n        self.example = Example(\n            stage_path=None,\n            robot=self.robot,\n            randomize=True,\n            headless=True,\n            actuation=\"random\",\n            num_envs=self.num_envs,\n            use_cuda_graph=True,\n            builder=self.builder,\n        )\n    \n        wp.synchronize_device()",
+        "min_run_count": 2,
+        "name": "simulation.bench_mujoco.FastAnt.time_simulate",
+        "number": 1,
+        "param_names": [],
+        "params": [],
+        "repeat": 8,
+        "rounds": 2,
+        "sample_time": 0.01,
+        "type": "time",
+        "unit": "seconds",
+        "version": "4c34b8a9664bee472d4c4189ded9e159dfa749d1a3711d27c67e3cde6b047a9d",
+        "warmup_time": -1
+    },
+    "simulation.bench_mujoco.FastCartpole.time_simulate": {
+        "code": "class FastCartpole:\n    @skip_benchmark_if(wp.get_cuda_device_count() == 0)\n    def time_simulate(self):\n        for _ in range(self.num_frames):\n            self.example.step()\n        wp.synchronize_device()\n\n    def setup(self):\n        if not hasattr(self, \"builder\") or self.builder is None:\n            self.builder = Example.create_model_builder(self.robot, self.num_envs, randomize=True, seed=123)\n    \n        self.example = Example(\n            stage_path=None,\n            robot=self.robot,\n            randomize=True,\n            headless=True,\n            actuation=\"random\",\n            num_envs=self.num_envs,\n            use_cuda_graph=True,\n            builder=self.builder,\n        )\n    \n        wp.synchronize_device()",
+        "min_run_count": 2,
+        "name": "simulation.bench_mujoco.FastCartpole.time_simulate",
+        "number": 1,
+        "param_names": [],
+        "params": [],
+        "repeat": 8,
+        "rounds": 2,
+        "sample_time": 0.01,
+        "type": "time",
+        "unit": "seconds",
+        "version": "fd39a3301fb0764cbe97bb8cecd47aca52f3dc2b84093658a4893183bf28b09b",
+        "warmup_time": -1
+    },
+    "simulation.bench_mujoco.FastG1.time_simulate": {
+        "code": "class FastG1:\n    @skip_benchmark_if(wp.get_cuda_device_count() == 0)\n    def time_simulate(self):\n        for _ in range(self.num_frames):\n            self.example.step()\n        wp.synchronize_device()\n\n    def setup(self):\n        if not hasattr(self, \"builder\") or self.builder is None:\n            self.builder = Example.create_model_builder(self.robot, self.num_envs, randomize=True, seed=123)\n    \n        self.example = Example(\n            stage_path=None,\n            robot=self.robot,\n            randomize=True,\n            headless=True,\n            actuation=\"random\",\n            num_envs=self.num_envs,\n            use_cuda_graph=True,\n            builder=self.builder,\n        )\n    \n        wp.synchronize_device()",
+        "min_run_count": 2,
+        "name": "simulation.bench_mujoco.FastG1.time_simulate",
+        "number": 1,
+        "param_names": [],
+        "params": [],
+        "repeat": 2,
+        "rounds": 2,
+        "sample_time": 0.01,
+        "type": "time",
+        "unit": "seconds",
+        "version": "3f90655636df5dea3120b818821f1d40cc29bf493cadcbb45fb6220bc8f42a0d",
+        "warmup_time": -1
+    },
+    "simulation.bench_mujoco.FastH1.time_simulate": {
+        "code": "class FastH1:\n    @skip_benchmark_if(wp.get_cuda_device_count() == 0)\n    def time_simulate(self):\n        for _ in range(self.num_frames):\n            self.example.step()\n        wp.synchronize_device()\n\n    def setup(self):\n        if not hasattr(self, \"builder\") or self.builder is None:\n            self.builder = Example.create_model_builder(self.robot, self.num_envs, randomize=True, seed=123)\n    \n        self.example = Example(\n            stage_path=None,\n            robot=self.robot,\n            randomize=True,\n            headless=True,\n            actuation=\"random\",\n            num_envs=self.num_envs,\n            use_cuda_graph=True,\n            builder=self.builder,\n        )\n    \n        wp.synchronize_device()",
+        "min_run_count": 2,
+        "name": "simulation.bench_mujoco.FastH1.time_simulate",
+        "number": 1,
+        "param_names": [],
+        "params": [],
+        "repeat": 2,
+        "rounds": 2,
+        "sample_time": 0.01,
+        "type": "time",
+        "unit": "seconds",
+        "version": "8494a814d1442ef5ce03db2bdc83193cef90386962ad6ba91db9569580c07254",
+        "warmup_time": -1
+    },
+    "simulation.bench_mujoco.FastHumanoid.time_simulate": {
+        "code": "class FastHumanoid:\n    @skip_benchmark_if(wp.get_cuda_device_count() == 0)\n    def time_simulate(self):\n        for _ in range(self.num_frames):\n            self.example.step()\n        wp.synchronize_device()\n\n    def setup(self):\n        if not hasattr(self, \"builder\") or self.builder is None:\n            self.builder = Example.create_model_builder(self.robot, self.num_envs, randomize=True, seed=123)\n    \n        self.example = Example(\n            stage_path=None,\n            robot=self.robot,\n            randomize=True,\n            headless=True,\n            actuation=\"random\",\n            num_envs=self.num_envs,\n            use_cuda_graph=True,\n            builder=self.builder,\n        )\n    \n        wp.synchronize_device()",
+        "min_run_count": 2,
+        "name": "simulation.bench_mujoco.FastHumanoid.time_simulate",
+        "number": 1,
+        "param_names": [],
+        "params": [],
+        "repeat": 8,
+        "rounds": 2,
+        "sample_time": 0.01,
+        "type": "time",
+        "unit": "seconds",
+        "version": "6d4f22a97d02d0202c17acf2fb398296380adde65ac0eb15a38a25445f1fd36f",
+        "warmup_time": -1
+    },
+    "simulation.bench_mujoco.KpiAnt.track_simulate": {
+        "code": "class KpiAnt:\n    @skip_benchmark_if(wp.get_cuda_device_count() == 0)\n    def track_simulate(self, num_envs):\n        total_time = 0.0\n        for _iter in range(self.samples):\n            example = Example(\n                stage_path=None,\n                robot=self.robot,\n                randomize=True,\n                headless=True,\n                actuation=\"random\",\n                num_envs=num_envs,\n                use_cuda_graph=True,\n                builder=self.builder[num_envs],\n            )\n    \n            wp.synchronize_device()\n            start_time = time.time()\n            for _ in range(self.num_frames):\n                example.step()\n            wp.synchronize_device()\n            total_time += time.time() - start_time\n    \n        return total_time * 1000 / (self.num_frames * example.sim_substeps * num_envs * self.samples)\n\n    def setup(self, num_envs):\n        if not hasattr(self, \"builder\") or self.builder is None:\n            self.builder = {}\n        if num_envs not in self.builder:\n            self.builder[num_envs] = Example.create_model_builder(self.robot, num_envs, randomize=True, seed=123)",
+        "name": "simulation.bench_mujoco.KpiAnt.track_simulate",
+        "param_names": [
+            "num_envs"
+        ],
+        "params": [
+            [
+                "4096",
+                "8192",
+                "16384"
+            ]
+        ],
+        "type": "track",
+        "unit": "ms/env-step",
+        "version": "b005fa08d44e263fd2b07b832e268631aebb8b192bb1beb8699fc4eb8c32cebb"
+    },
+    "simulation.bench_mujoco.KpiCartpole.track_simulate": {
+        "code": "class KpiCartpole:\n    @skip_benchmark_if(wp.get_cuda_device_count() == 0)\n    def track_simulate(self, num_envs):\n        total_time = 0.0\n        for _iter in range(self.samples):\n            example = Example(\n                stage_path=None,\n                robot=self.robot,\n                randomize=True,\n                headless=True,\n                actuation=\"random\",\n                num_envs=num_envs,\n                use_cuda_graph=True,\n                builder=self.builder[num_envs],\n            )\n    \n            wp.synchronize_device()\n            start_time = time.time()\n            for _ in range(self.num_frames):\n                example.step()\n            wp.synchronize_device()\n            total_time += time.time() - start_time\n    \n        return total_time * 1000 / (self.num_frames * example.sim_substeps * num_envs * self.samples)\n\n    def setup(self, num_envs):\n        if not hasattr(self, \"builder\") or self.builder is None:\n            self.builder = {}\n        if num_envs not in self.builder:\n            self.builder[num_envs] = Example.create_model_builder(self.robot, num_envs, randomize=True, seed=123)",
+        "name": "simulation.bench_mujoco.KpiCartpole.track_simulate",
+        "param_names": [
+            "num_envs"
+        ],
+        "params": [
+            [
+                "4096",
+                "8192"
+            ]
+        ],
+        "type": "track",
+        "unit": "ms/env-step",
+        "version": "63274508512b40cda3e7630650c8ae03a11d2a212470ec94aae1e52f6f103523"
+    },
+    "simulation.bench_mujoco.KpiG1.track_simulate": {
+        "code": "class KpiG1:\n    @skip_benchmark_if(wp.get_cuda_device_count() == 0)\n    def track_simulate(self, num_envs):\n        total_time = 0.0\n        for _iter in range(self.samples):\n            example = Example(\n                stage_path=None,\n                robot=self.robot,\n                randomize=True,\n                headless=True,\n                actuation=\"random\",\n                num_envs=num_envs,\n                use_cuda_graph=True,\n                builder=self.builder[num_envs],\n            )\n    \n            wp.synchronize_device()\n            start_time = time.time()\n            for _ in range(self.num_frames):\n                example.step()\n            wp.synchronize_device()\n            total_time += time.time() - start_time\n    \n        return total_time * 1000 / (self.num_frames * example.sim_substeps * num_envs * self.samples)\n\n    def setup(self, num_envs):\n        if not hasattr(self, \"builder\") or self.builder is None:\n            self.builder = {}\n        if num_envs not in self.builder:\n            self.builder[num_envs] = Example.create_model_builder(self.robot, num_envs, randomize=True, seed=123)",
+        "name": "simulation.bench_mujoco.KpiG1.track_simulate",
+        "param_names": [
+            "num_envs"
+        ],
+        "params": [
+            [
+                "4096",
+                "8192"
+            ]
+        ],
+        "timeout": 900,
+        "type": "track",
+        "unit": "ms/env-step",
+        "version": "de573199420bdf0ac2a2fba80c2c55155f9681efb334b7e7d1c08f9d9f18fa7b"
+    },
+    "simulation.bench_mujoco.KpiH1.track_simulate": {
+        "code": "class KpiH1:\n    @skip_benchmark_if(wp.get_cuda_device_count() == 0)\n    def track_simulate(self, num_envs):\n        total_time = 0.0\n        for _iter in range(self.samples):\n            example = Example(\n                stage_path=None,\n                robot=self.robot,\n                randomize=True,\n                headless=True,\n                actuation=\"random\",\n                num_envs=num_envs,\n                use_cuda_graph=True,\n                builder=self.builder[num_envs],\n            )\n    \n            wp.synchronize_device()\n            start_time = time.time()\n            for _ in range(self.num_frames):\n                example.step()\n            wp.synchronize_device()\n            total_time += time.time() - start_time\n    \n        return total_time * 1000 / (self.num_frames * example.sim_substeps * num_envs * self.samples)\n\n    def setup(self, num_envs):\n        if not hasattr(self, \"builder\") or self.builder is None:\n            self.builder = {}\n        if num_envs not in self.builder:\n            self.builder[num_envs] = Example.create_model_builder(self.robot, num_envs, randomize=True, seed=123)",
+        "name": "simulation.bench_mujoco.KpiH1.track_simulate",
+        "param_names": [
+            "num_envs"
+        ],
+        "params": [
+            [
+                "4096",
+                "8192"
+            ]
+        ],
+        "timeout": 900,
+        "type": "track",
+        "unit": "ms/env-step",
+        "version": "10531e36e539032d65657b866d836a7d6961927420aaf400c637dcf543c4ce39"
+    },
+    "simulation.bench_mujoco.KpiHumanoid.track_simulate": {
+        "code": "class KpiHumanoid:\n    @skip_benchmark_if(wp.get_cuda_device_count() == 0)\n    def track_simulate(self, num_envs):\n        total_time = 0.0\n        for _iter in range(self.samples):\n            example = Example(\n                stage_path=None,\n                robot=self.robot,\n                randomize=True,\n                headless=True,\n                actuation=\"random\",\n                num_envs=num_envs,\n                use_cuda_graph=True,\n                builder=self.builder[num_envs],\n            )\n    \n            wp.synchronize_device()\n            start_time = time.time()\n            for _ in range(self.num_frames):\n                example.step()\n            wp.synchronize_device()\n            total_time += time.time() - start_time\n    \n        return total_time * 1000 / (self.num_frames * example.sim_substeps * num_envs * self.samples)\n\n    def setup(self, num_envs):\n        if not hasattr(self, \"builder\") or self.builder is None:\n            self.builder = {}\n        if num_envs not in self.builder:\n            self.builder[num_envs] = Example.create_model_builder(self.robot, num_envs, randomize=True, seed=123)",
+        "name": "simulation.bench_mujoco.KpiHumanoid.track_simulate",
+        "param_names": [
+            "num_envs"
+        ],
+        "params": [
+            [
+                "4096",
+                "8192"
+            ]
+        ],
+        "type": "track",
+        "unit": "ms/env-step",
+        "version": "8c1e58a66c1ac1baa09e381097304cb6bd99e3da12f50dca069650a30c82f87e"
+    },
+    "simulation.bench_quadruped_xpbd.FastExampleQuadrupedXPBD.time_simulate": {
+        "code": "class FastExampleQuadrupedXPBD:\n    @skip_benchmark_if(wp.get_cuda_device_count() == 0)\n    def time_simulate(self):\n        for _ in range(self.num_frames):\n            self.example.step()\n        wp.synchronize_device()\n\n    def setup(self):\n        self.num_frames = 1000\n        self.example = Example(stage_path=None, num_envs=200)",
+        "min_run_count": 2,
+        "name": "simulation.bench_quadruped_xpbd.FastExampleQuadrupedXPBD.time_simulate",
+        "number": 1,
+        "param_names": [],
+        "params": [],
+        "repeat": 10,
+        "rounds": 2,
+        "sample_time": 0.01,
+        "type": "time",
+        "unit": "seconds",
+        "version": "5830eb8e754a57e66133faea3abc80443dea0b3a3de84d122d8f4c772f8e77b6",
+        "warmup_time": -1
+    },
+    "simulation.bench_selection.FastExampleSelectionCartpoleMuJoCo.time_simulate": {
+        "code": "class FastExampleSelectionCartpoleMuJoCo:\n    @skip_benchmark_if(wp.get_cuda_device_count() == 0)\n    def time_simulate(self):\n        for _ in range(self.num_frames):\n            self.example.step()\n        wp.synchronize_device()\n\n    def setup(self):\n        self.num_frames = 200\n        self.example = Example(stage_path=None, num_envs=16, use_cuda_graph=True)",
+        "min_run_count": 2,
+        "name": "simulation.bench_selection.FastExampleSelectionCartpoleMuJoCo.time_simulate",
+        "number": 1,
+        "param_names": [],
+        "params": [],
+        "repeat": 10,
+        "rounds": 2,
+        "sample_time": 0.01,
+        "type": "time",
+        "unit": "seconds",
+        "version": "930915f83ac0feb5666085760e1417aae8aade23a359df46d11b1415f3206e53",
+        "warmup_time": -1
+    },
+    "version": 2
+}
