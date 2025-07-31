@@ -177,7 +177,7 @@
         "repeat": 3,
         "rounds": 1,
         "sample_time": 0.01,
-        "timeout": 1800,
+        "timeout": 3600,
         "type": "time",
         "unit": "seconds",
         "version": "916798ac3c284de170329bf7c2922e5f147d35325fe54719dc7624847692f943",
