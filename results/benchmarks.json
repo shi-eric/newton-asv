@@ -199,7 +199,7 @@
         "warmup_time": -1
     },
     "simulation.bench_cloth.FastExampleClothManipulation.time_simulate": {
-        "code": "class FastExampleClothManipulation:\n    @skip_benchmark_if(wp.get_cuda_device_count() == 0)\n    def time_simulate(self):\n        for frame_idx in range(self.num_frames):\n            self.example.step()\n    \n            if self.example.cloth_solver and not (frame_idx % 10):\n                self.example.cloth_solver.rebuild_bvh(self.example.state_0)\n                self.example.capture_cuda_graph()\n    \n        wp.synchronize_device()\n\n    def setup(self):\n        self.num_frames = 30\n        self.example = ExampleClothManipulation(stage_path=None, num_frames=self.num_frames)",
+        "code": "class FastExampleClothManipulation:\n    @skip_benchmark_if(wp.get_cuda_device_count() == 0)\n    def time_simulate(self):\n        newton.examples.run(self.example)\n    \n        wp.synchronize_device()\n\n    def setup(self):\n        self.num_frames = 30\n        self.example = ExampleClothManipulation(ViewerNull(num_frames=self.num_frames))",
         "min_run_count": 2,
         "name": "simulation.bench_cloth.FastExampleClothManipulation.time_simulate",
         "number": 1,
@@ -211,11 +211,11 @@
         "timeout": 300,
         "type": "time",
         "unit": "seconds",
-        "version": "a37772d063751b8d47e417336dcdbfb8dde247f61c518732b7eb5cd63c9f130e",
+        "version": "e988df7362b547f3a7d63818479fde212e90c229bf7d08f76d8abf6f0695b906",
         "warmup_time": -1
     },
     "simulation.bench_cloth.FastExampleClothSelfContactVBD.time_simulate": {
-        "code": "class FastExampleClothSelfContactVBD:\n    @skip_benchmark_if(wp.get_cuda_device_count() == 0)\n    def time_simulate(self):\n        for i in range(self.num_frames):\n            self.example.step()\n    \n            if (\n                i != 0\n                and not i % self.example.bvh_rebuild_frames\n                and self.example.use_cuda_graph\n                and self.example.solver.handle_self_contact\n            ):\n                self.example.solver.rebuild_bvh(self.example.state_0)\n                with wp.ScopedCapture() as capture:\n                    self.example.simulate_substeps()\n                self.example.cuda_graph = capture.graph\n    \n        wp.synchronize_device()\n\n    def setup(self):\n        self.num_frames = 100\n        self.example = ExampleClothSelfContact(stage_path=None)",
+        "code": "class FastExampleClothSelfContactVBD:\n    @skip_benchmark_if(wp.get_cuda_device_count() == 0)\n    def time_simulate(self):\n        newton.examples.run(self.example)\n    \n        wp.synchronize_device()\n\n    def setup(self):\n        self.num_frames = 100\n        self.example = ExampleClothSelfContact(ViewerNull(num_frames=self.num_frames))",
         "min_run_count": 2,
         "name": "simulation.bench_cloth.FastExampleClothSelfContactVBD.time_simulate",
         "number": 1,
@@ -226,7 +226,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "bb21dbe8af3ed7c9f5f73d9e3060a070da211554fc6072306bb135e0d88d54f5",
+        "version": "925f25f135a85f89a002ba10ad692cf4e66a09470048fd13caa1292156bc2429",
         "warmup_time": -1
     },
     "simulation.bench_mujoco.FastAnt.time_simulate": {
