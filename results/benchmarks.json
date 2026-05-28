@@ -261,31 +261,6 @@
         "version": "5ba06d80fcf8716093a193bd47034b063820abddda6df221a0f5d2df380f8e01",
         "warmup_time": -1
     },
-    "setup.bench_sdf.FastBuildSdf.time_build_sdf": {
-        "code": "class FastBuildSdf:\n    @skip_benchmark_if(wp.get_cuda_device_count() == 0)\n    def time_build_sdf(self, max_resolution):\n        for _ in range(_BUILDS_PER_SAMPLE[max_resolution]):\n            _build_sdf(self._mesh, max_resolution=max_resolution)\n            # Release the SDF before the next iteration: ``build_sdf``\n            # raises if the mesh already has one attached, and we want\n            # each timed call to start from the same state.\n            self._mesh.clear_sdf()\n        wp.synchronize_device()\n\n    def setup(self, max_resolution):\n        wp.init()\n        if wp.get_cuda_device_count() == 0:\n            # Matches the ``skip_benchmark_if`` guard on ``time_build_sdf``.\n            return\n    \n        vertices, indices = _create_icosphere(radius=0.5, subdivisions=_SPHERE_SUBDIVISIONS)\n    \n        # Build the Newton mesh (and its BVH) once in setup so the timed\n        # call measures only the SDF cook -- not mesh construction or BVH\n        # rebuilds.\n        self._mesh = newton.Mesh(vertices, indices, compute_inertia=False)\n    \n        # Extended warmup: multiple builds push the GPU into a sustained\n        # boost-clock state, not just compile kernels.\n        for _ in range(_WARMUP_BUILDS):\n            self._mesh.clear_sdf()\n            _build_sdf(self._mesh, max_resolution=max_resolution)\n        self._mesh.clear_sdf()\n        wp.synchronize_device()",
-        "min_run_count": 1,
-        "name": "setup.bench_sdf.FastBuildSdf.time_build_sdf",
-        "number": 1,
-        "param_names": [
-            "max_resolution"
-        ],
-        "params": [
-            [
-                "32",
-                "64",
-                "128",
-                "256"
-            ]
-        ],
-        "repeat": 5,
-        "rounds": 2,
-        "sample_time": 0.01,
-        "timeout": 600,
-        "type": "time",
-        "unit": "seconds",
-        "version": "92f72f96438ffd9ad0dee8e00d73a0a6991544fec74f7f5739e05ad473136aa1",
-        "warmup_time": -1
-    },
     "simulation.bench_anymal.FastExampleAnymalPretrained.time_simulate": {
         "code": "class FastExampleAnymalPretrained:\n    @skip_benchmark_if(wp.get_cuda_device_count() == 0)\n    def time_simulate(self):\n        for _ in range(self.num_frames):\n            self.example.step()\n        wp.synchronize_device()\n\n    def setup(self):\n        self.num_frames = 50\n        if hasattr(newton.examples, \"default_args\"):\n            args = newton.examples.default_args()\n        else:\n            args = None\n        self.example = Example(newton.viewer.ViewerNull(num_frames=self.num_frames), args)",
         "min_run_count": 2,
