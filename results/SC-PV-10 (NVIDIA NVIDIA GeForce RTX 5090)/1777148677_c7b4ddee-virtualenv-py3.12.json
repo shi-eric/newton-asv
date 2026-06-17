@@ -548,7 +548,7 @@
                 20
             ]
         ],
-        "simulation.bench_sensor_tiled_camera.SensorTiledCameraBenchmark.time_rendering_pixel_priority_color_depth": [
+        "simulation.bench_sensor_tiled_camera.FastSensorTiledCamera.time_rendering_pixel_priority_color_depth": [
             [
                 2.3894898090001675
             ],
@@ -563,7 +563,7 @@
                     "50"
                 ]
             ],
-            "939f5d1ea837a34871e950d4e7ba8788446966138cb3e37aba53b03b1c0a3706",
+            "a81d0e46b7e3a4dfd32e34ec4236662b594e0ee0a43a64c19d1e57e5fa94c0f8",
             1777148363824,
             93.325,
             [
@@ -585,7 +585,7 @@
                 4
             ]
         ],
-        "simulation.bench_sensor_tiled_camera.SensorTiledCameraBenchmark.time_rendering_pixel_priority_color_only": [
+        "simulation.bench_sensor_tiled_camera.FastSensorTiledCamera.time_rendering_pixel_priority_color_only": [
             [
                 2.3616260520000196
             ],
@@ -600,7 +600,7 @@
                     "50"
                 ]
             ],
-            "2f68a7db46361225afeb0b376d95d6cc2a664a7ec8f330ecd513d695dcc1d1a6",
+            "19fd50cf282cc99b08cfc1829a1c7be222710a5e156119559d4de1502edf999a",
             1777148411396,
             59.592,
             [
@@ -622,7 +622,7 @@
                 4
             ]
         ],
-        "simulation.bench_sensor_tiled_camera.SensorTiledCameraBenchmark.time_rendering_pixel_priority_depth_only": [
+        "simulation.bench_sensor_tiled_camera.FastSensorTiledCamera.time_rendering_pixel_priority_depth_only": [
             [
                 1.8057376685000577
             ],
@@ -637,7 +637,7 @@
                     "50"
                 ]
             ],
-            "29207d4598934b7451dbc362f1a599757265a632c4976131ac2fe2fa262b2848",
+            "375e91082810d808149ad78f6eb6b9ce68d586976da775a2917e99483bea37a0",
             1777148441312,
             62.462,
             [
@@ -659,7 +659,7 @@
                 4
             ]
         ],
-        "simulation.bench_sensor_tiled_camera.SensorTiledCameraBenchmark.time_rendering_tiled_color_depth": [
+        "simulation.bench_sensor_tiled_camera.FastSensorTiledCamera.time_rendering_tiled_color_depth": [
             [
                 2.240745868000033
             ],
@@ -696,7 +696,7 @@
                 2
             ]
         ],
-        "simulation.bench_sensor_tiled_camera.SensorTiledCameraBenchmark.time_rendering_tiled_color_only": [
+        "simulation.bench_sensor_tiled_camera.FastSensorTiledCamera.time_rendering_tiled_color_only": [
             [
                 2.2347056424999323
             ],
@@ -733,7 +733,7 @@
                 2
             ]
         ],
-        "simulation.bench_sensor_tiled_camera.SensorTiledCameraBenchmark.time_rendering_tiled_depth_only": [
+        "simulation.bench_sensor_tiled_camera.FastSensorTiledCamera.time_rendering_tiled_depth_only": [
             [
                 3.321280072499917
             ],
@@ -924,7 +924,7 @@
                     "8192"
                 ]
             ],
-            "2e362decc4185c828ef6d98fe6af1efffd5f87ce0cdc1bc3b377e663eb8118ee",
+            "1eb1943d31536b040079c24c6428a73a866fdab4411562e31dbf0c79bcb18df9",
             1777147717474,
             66.572,
             [
@@ -1251,7 +1251,7 @@
                     "256"
                 ]
             ],
-            "642ffc84509c186e6530cb17a6441701287ee3dac455b6d51624f5ce68535404",
+            "889585d54e5e70fe61ed7e1e066b837180ea8bde16da86aa735ad894f10f63f4",
             1777148631708,
             8.5279
         ],
@@ -1271,7 +1271,7 @@
                     "256"
                 ]
             ],
-            "8a2f444deb1bc9001cb7014bff52e797ef385358333ee5091e02f65ee018e2a5",
+            "2c5b54190ffe915edf4bedba6e1bda0783dd321f2141a56e52ace85061077198",
             1777148640236,
             9.7452,
             [
