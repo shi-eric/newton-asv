@@ -1,0 +1,10 @@
+{
+    "arch": "x86_64",
+    "cpu": "Intel(R) Core(TM) Ultra 9 285K (24 physical cores, 24 logical)",
+    "gpu": "Unknown GPU (NVIDIA expected)",
+    "machine": "SC-PV-10 (Unknown GPU (NVIDIA expected))",
+    "num_cpu": "24",
+    "os": "Linux 6.17.0-1017-oem version #17-Ubuntu SMP PREEMPT_DYNAMIC Fri Mar 27 13:48:03 UTC 2026",
+    "ram": "62GB",
+    "version": 1
+}
