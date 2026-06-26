@@ -1,0 +1,185 @@
+{
+    "commit_hash": "0b9122ced5dd21516dea81726cd95ee130ffd7dc",
+    "env_name": "virtualenv-py3.12",
+    "date": 1782471560000,
+    "params": {
+        "arch": "x86_64",
+        "cpu": "Intel(R) Core(TM) Ultra 9 285K (24 physical cores, 24 logical)",
+        "gpu": "Unknown GPU (NVIDIA expected)",
+        "machine": "newton-benchmark-machine-f36e64c9",
+        "num_cpu": "24",
+        "os": "Linux 6.17.0-1017-oem version #17-Ubuntu SMP PREEMPT_DYNAMIC Fri Mar 27 13:48:03 UTC 2026",
+        "ram": "62GB",
+        "python": "3.12"
+    },
+    "python": "3.12",
+    "requirements": {},
+    "env_vars": {},
+    "result_columns": [
+        "result",
+        "params",
+        "version",
+        "started_at",
+        "duration",
+        "stats_ci_99_a",
+        "stats_ci_99_b",
+        "stats_q_25",
+        "stats_q_75",
+        "stats_number",
+        "stats_repeat",
+        "samples",
+        "profile"
+    ],
+    "results": {
+        "simulation.bench_cpu.CpuIKFranka.time_solve": [
+            [
+                0.30662266049998266
+            ],
+            [],
+            "9fcf20853dc25c179cf22edc84aaecfbc94de82b1f4b033cce852ac472cd553c",
+            1782478148089,
+            12.322,
+            [
+                0.25625
+            ],
+            [
+                0.32651
+            ],
+            [
+                0.27114
+            ],
+            [
+                0.30758
+            ],
+            [
+                1
+            ],
+            [
+                6
+            ]
+        ],
+        "simulation.bench_cpu.CpuMuJoCoAnt.time_simulate": [
+            [
+                1.038990682500014
+            ],
+            [],
+            "0a22cae57e12fedfe0c13401c99f74103930eddc22cb682f7ea0c645fea34fab",
+            1782478154500,
+            13.195,
+            [
+                0.78688
+            ],
+            [
+                1.3209
+            ],
+            [
+                0.90385
+            ],
+            [
+                1.207
+            ],
+            [
+                1
+            ],
+            [
+                6
+            ]
+        ],
+        "simulation.bench_cpu.CpuXPBDQuadruped.time_simulate": [
+            [
+                0.301266923
+            ],
+            [],
+            "54b6dd283508ea5212d65e1e09425583d291e6a060bd4cfa3e7626e86079f450",
+            1782478160513,
+            6.3295,
+            [
+                0.29298
+            ],
+            [
+                0.31008
+            ],
+            [
+                0.29835
+            ],
+            [
+                0.30454
+            ],
+            [
+                1
+            ],
+            [
+                6
+            ]
+        ],
+        "simulation.bench_mujoco.FastAllegro.time_simulate": [
+            [
+                NaN
+            ],
+            [],
+            "050787e293b420fcbd6a5fe7a12dbff906c9d5a4e3d6a41808b072e5b69bfb98",
+            1782478163749,
+            5.7493
+        ],
+        "simulation.bench_mujoco.FastCartpole.time_simulate": [
+            [
+                NaN
+            ],
+            [],
+            "050787e293b420fcbd6a5fe7a12dbff906c9d5a4e3d6a41808b072e5b69bfb98",
+            1782478166344,
+            4.2546
+        ],
+        "simulation.bench_mujoco.FastG1.time_simulate": [
+            [
+                NaN
+            ],
+            [],
+            "050787e293b420fcbd6a5fe7a12dbff906c9d5a4e3d6a41808b072e5b69bfb98",
+            1782478168312,
+            10.949
+        ],
+        "simulation.bench_mujoco.FastHumanoid.time_simulate": [
+            [
+                NaN
+            ],
+            [],
+            "050787e293b420fcbd6a5fe7a12dbff906c9d5a4e3d6a41808b072e5b69bfb98",
+            1782478173587,
+            4.9485
+        ],
+        "simulation.bench_mujoco.FastKitchenG1.time_simulate": [
+            [
+                NaN
+            ],
+            [],
+            "050787e293b420fcbd6a5fe7a12dbff906c9d5a4e3d6a41808b072e5b69bfb98",
+            1782478175780,
+            7.6125
+        ],
+        "setup.bench_model.FastInitializeModel.peakmem_initialize_model_cpu": [
+            [
+                428724224,
+                765362176,
+                414375936
+            ],
+            [
+                [
+                    "'humanoid'",
+                    "'g1'",
+                    "'cartpole'"
+                ],
+                [
+                    "256"
+                ]
+            ],
+            "889585d54e5e70fe61ed7e1e066b837180ea8bde16da86aa735ad894f10f63f4",
+            1782478141250,
+            6.8387
+        ]
+    },
+    "durations": {
+        "<setup_cache setup.bench_model:118>": 3.689228
+    },
+    "version": 2
+}
