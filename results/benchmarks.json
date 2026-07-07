@@ -480,6 +480,36 @@
         "version": "f1893d5d7fa234e73de9079a79d148adaf8e641c1c13d72d9aedfb65ae0a9f5f",
         "warmup_time": -1
     },
+    "simulation.bench_kamino.FastDRLegs.time_simulate": {
+        "code": "class _FastBenchmark:\n    @skip_benchmark_if(wp.get_cuda_device_count() == 0)\n    def time_simulate(self):\n        for _ in range(self.num_frames):\n            for _ in range(self.workload.decimation):\n                wp.capture_launch(self.workload.reset_graph)\n                wp.capture_launch(self.workload.graph)\n        wp.synchronize_device()\n\n    def setup(self):\n        if not hasattr(self, \"_builder\") or self._builder is None:\n            self._builder = DRLegsBenchmarkWorkload.create_model_builder(self.robot, self.world_count)\n    \n        self.workload = DRLegsBenchmarkWorkload(\n            robot=self.robot,\n            world_count=self.world_count,\n            use_cuda_graph=True,\n            use_policy=False,\n            builder=self._builder,\n        )\n    \n        wp.synchronize_device()\n    \n        if self.workload.graph is None or self.workload.reset_graph is None:\n            raise SkipNotImplemented(\"CUDA graph capture unavailable (is the CUDA mempool allocator enabled?)\")",
+        "min_run_count": 2,
+        "name": "simulation.bench_kamino.FastDRLegs.time_simulate",
+        "number": 1,
+        "param_names": [],
+        "params": [],
+        "repeat": 2,
+        "rounds": 2,
+        "sample_time": 0.01,
+        "type": "time",
+        "unit": "seconds",
+        "version": "5cfc5255e143308d7271e21566a3229823476fd0a40eea57046aeac59d8abf9e",
+        "warmup_time": -1
+    },
+    "simulation.bench_kamino.KpiDRLegs.track_simulate": {
+        "code": "class _KpiBenchmark:\n    @skip_benchmark_if(wp.get_cuda_device_count() == 0)\n    def track_simulate(self, world_count):\n        total_time = 0.0\n        for _iter in range(self.samples):\n            workload = DRLegsBenchmarkWorkload(\n                robot=self.robot,\n                world_count=world_count,\n                use_cuda_graph=True,\n                use_policy=self.use_policy,\n                builder=self._builder[world_count],\n            )\n            if workload.graph is None or workload.reset_graph is None:\n                raise RuntimeError(\"KPI benchmark requires CUDA graph capture (is the CUDA mempool allocator enabled?)\")\n    \n            wp.synchronize_device()\n            for _ in range(self.num_frames):\n                workload.step()\n            total_time += workload.benchmark_time\n            workload.test_final()\n    \n        return total_time * 1000 / (self.num_frames * workload.sim_substeps * world_count * self.samples)\n\n    def setup(self, world_count):\n        if not hasattr(self, \"_builder\") or self._builder is None:\n            self._builder = {}\n        if world_count not in self._builder:\n            self._builder[world_count] = DRLegsBenchmarkWorkload.create_model_builder(self.robot, world_count)",
+        "name": "simulation.bench_kamino.KpiDRLegs.track_simulate",
+        "param_names": [
+            "world_count"
+        ],
+        "params": [
+            [
+                "4096"
+            ]
+        ],
+        "type": "track",
+        "unit": "ms/world-step",
+        "version": "f97a2a73bfc4b72f0cb9112dfee1c26a2aca2d6db02f03df354c5970deabef09"
+    },
     "simulation.bench_mujoco.FastAllegro.time_simulate": {
         "code": "class _FastBenchmark:\n    def time_simulate(self):\n        for _ in range(self.num_frames):\n            wp.capture_launch(self.graph)\n        wp.synchronize_device()\n\n    def setup(self):\n        if not hasattr(self, \"builder\") or self.builder is None:\n            self.builder = Example.create_model_builder(\n                self.robot, self.world_count, randomize=self.random_init, seed=123\n            )\n    \n        self.example = Example(\n            stage_path=None,\n            robot=self.robot,\n            randomize=self.random_init,\n            headless=True,\n            actuation=\"None\",\n            use_cuda_graph=True,\n            builder=self.builder,\n            environment=self.environment,\n        )\n    \n        wp.synchronize_device()\n    \n        # Recapture the graph with control application included\n        cuda_graph_comp = wp.get_device().is_cuda and wp.is_mempool_enabled(wp.get_device())\n        if not cuda_graph_comp:\n            raise SkipNotImplemented\n        else:\n            state = wp.rand_init(self.example.seed)\n            target_q = _target_q(self.example.control)\n            quat_offsets = _free_ball_quat_offsets(self.example.model)\n            quat_offsets_wp = wp.array(quat_offsets, dtype=int, device=target_q.device) if quat_offsets else None\n            with wp.ScopedCapture() as capture:\n                wp.launch(\n                    apply_random_control,\n                    dim=(target_q.shape[0],),\n                    inputs=[state],\n                    outputs=[target_q],\n                )\n                if quat_offsets_wp is not None:\n                    wp.launch(\n                        restore_target_quat_identity,\n                        dim=(quat_offsets_wp.shape[0],),\n                        inputs=[target_q, quat_offsets_wp],\n                    )\n                self.example.simulate()\n            self.graph = capture.graph\n            self._quat_offsets_wp = quat_offsets_wp\n    \n        wp.synchronize_device()",
         "min_run_count": 2,
