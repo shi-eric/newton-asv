@@ -563,7 +563,7 @@
                     "50"
                 ]
             ],
-            "a81d0e46b7e3a4dfd32e34ec4236662b594e0ee0a43a64c19d1e57e5fa94c0f8",
+            "43e34a6d7729834ad65f3d6e131839500eee84e1426a69535a08a2adca0e3f4d",
             1776552743634,
             89.391,
             [
@@ -600,7 +600,7 @@
                     "50"
                 ]
             ],
-            "19fd50cf282cc99b08cfc1829a1c7be222710a5e156119559d4de1502edf999a",
+            "797ec2dea702f86345fd76b2d99b60712caa21447f8d56a5a58a23bc8c8206b7",
             1776552787782,
             62.303,
             [
@@ -637,7 +637,7 @@
                     "50"
                 ]
             ],
-            "375e91082810d808149ad78f6eb6b9ce68d586976da775a2917e99483bea37a0",
+            "19cf87fe7b82e5ed67da4ab569faf32888c8b0c80b5989ef96c6de0ce81bbe23",
             1776552819006,
             64.195,
             [
@@ -1131,7 +1131,7 @@
             1776552557572,
             3.7379
         ],
-        "simulation.bench_mujoco.KpiAllegro.track_simulate": [
+        "simulation.bench_mujoco.FastAllegro.track_simulate": [
             [
                 0.0003219054245467608
             ],
@@ -1144,7 +1144,7 @@
             1776552561310,
             29.855
         ],
-        "simulation.bench_mujoco.KpiCartpole.track_simulate": [
+        "simulation.bench_mujoco.FastCartpole.track_simulate": [
             [
                 2.2237756638787687e-05
             ],
@@ -1157,7 +1157,7 @@
             1776552591166,
             5.8535
         ],
-        "simulation.bench_mujoco.KpiG1.track_simulate": [
+        "simulation.bench_mujoco.FastG1.track_simulate": [
             [
                 0.0006051626114640385
             ],
@@ -1170,7 +1170,7 @@
             1776552597019,
             35.189
         ],
-        "simulation.bench_mujoco.KpiHumanoid.track_simulate": [
+        "simulation.bench_mujoco.FastHumanoid.track_simulate": [
             [
                 0.00012290698214201257
             ],
@@ -1183,7 +1183,7 @@
             1776552632209,
             23.579
         ],
-        "simulation.bench_mujoco.KpiKitchenG1.track_simulate": [
+        "simulation.bench_mujoco.FastKitchenG1.track_simulate": [
             [
                 0.002785340417176485
             ],

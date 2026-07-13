@@ -888,7 +888,7 @@
             1773923904623,
             3.3406
         ],
-        "simulation.bench_mujoco.KpiAllegro.track_simulate": [
+        "simulation.bench_mujoco.FastAllegro.track_simulate": [
             [
                 0.00033627352483260137
             ],
@@ -901,7 +901,7 @@
             1773923907964,
             30.82
         ],
-        "simulation.bench_mujoco.KpiCartpole.track_simulate": [
+        "simulation.bench_mujoco.FastCartpole.track_simulate": [
             [
                 2.2604494006372988e-05
             ],
@@ -914,7 +914,7 @@
             1773923938784,
             5.3693
         ],
-        "simulation.bench_mujoco.KpiG1.track_simulate": [
+        "simulation.bench_mujoco.FastG1.track_simulate": [
             [
                 0.0007063548546284437
             ],
@@ -927,7 +927,7 @@
             1773923944153,
             33.718
         ],
-        "simulation.bench_mujoco.KpiHumanoid.track_simulate": [
+        "simulation.bench_mujoco.FastHumanoid.track_simulate": [
             [
                 0.0001359496745862998
             ],
@@ -940,7 +940,7 @@
             1773923977871,
             23.724
         ],
-        "simulation.bench_mujoco.KpiKitchenG1.track_simulate": [
+        "simulation.bench_mujoco.FastKitchenG1.track_simulate": [
             [
                 0.002838988322764635
             ],
