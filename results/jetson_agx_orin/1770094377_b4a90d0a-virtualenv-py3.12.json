@@ -752,29 +752,33 @@
         ],
         "simulation.bench_mujoco.FastNewtonOverheadG1.track_simulate": [
             [
-                10.868630709380323
+                10.868630709380323,
+                3.4680443305153723
             ],
             [
                 [
-                    "256"
+                    "256",
+                    "8192"
                 ]
             ],
             "fe70e157fca3a62483a36774d09261958a0fedbf90954bc3cd3db4f230fa368d",
             1770092920028,
-            14.971
+            193.231
         ],
         "simulation.bench_mujoco.FastNewtonOverheadHumanoid.track_simulate": [
             [
-                13.05458765866283
+                13.05458765866283,
+                5.0976385854299675
             ],
             [
                 [
-                    "256"
+                    "256",
+                    "8192"
                 ]
             ],
             "fe70e157fca3a62483a36774d09261958a0fedbf90954bc3cd3db4f230fa368d",
             1770092935001,
-            10.955
+            142.985
         ],
         "simulation.bench_mujoco.FastAllegro.track_simulate": [
             [
@@ -840,32 +844,6 @@
             "7deb8426115b4478e0218848034ff1ce843d79f6fa7c3eab3ae47225cea6f22a",
             1770093518753,
             40.61
-        ],
-        "simulation.bench_mujoco.KpiNewtonOverheadG1.track_simulate": [
-            [
-                3.4680443305153723
-            ],
-            [
-                [
-                    "8192"
-                ]
-            ],
-            "fe70e157fca3a62483a36774d09261958a0fedbf90954bc3cd3db4f230fa368d",
-            1770093559364,
-            178.26
-        ],
-        "simulation.bench_mujoco.KpiNewtonOverheadHumanoid.track_simulate": [
-            [
-                5.0976385854299675
-            ],
-            [
-                [
-                    "8192"
-                ]
-            ],
-            "fe70e157fca3a62483a36774d09261958a0fedbf90954bc3cd3db4f230fa368d",
-            1770093737623,
-            132.03
         ],
         "simulation.bench_viewer.FastViewerGL.time_rendering_frame": [
             [

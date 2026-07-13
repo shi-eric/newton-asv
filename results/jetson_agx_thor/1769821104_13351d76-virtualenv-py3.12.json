@@ -712,27 +712,33 @@
         ],
         "simulation.bench_mujoco.FastNewtonOverheadG1.track_simulate": [
             [
-                13.160165885334193
+                13.160165885334193,
+                2.8789451956764243
             ],
             [
                 [
-                    "256"
+                    "256",
+                    "8192"
                 ]
             ],
             "fe70e157fca3a62483a36774d09261958a0fedbf90954bc3cd3db4f230fa368d",
             1769820397632,
-            11.725
+            122.515
         ],
         "simulation.bench_mujoco.FastNewtonOverheadHumanoid.track_simulate": [
-            null,
+            [
+                null,
+                null
+            ],
             [
                 [
-                    "256"
+                    "256",
+                    "8192"
                 ]
             ],
             "fe70e157fca3a62483a36774d09261958a0fedbf90954bc3cd3db4f230fa368d",
             1769820409358,
-            2.8178
+            5.6528
         ],
         "simulation.bench_mujoco.FastAllegro.track_simulate": [
             [
@@ -796,30 +802,6 @@
             "7deb8426115b4478e0218848034ff1ce843d79f6fa7c3eab3ae47225cea6f22a",
             1769820703937,
             23.565
-        ],
-        "simulation.bench_mujoco.KpiNewtonOverheadG1.track_simulate": [
-            [
-                2.8789451956764243
-            ],
-            [
-                [
-                    "8192"
-                ]
-            ],
-            "fe70e157fca3a62483a36774d09261958a0fedbf90954bc3cd3db4f230fa368d",
-            1769820727503,
-            110.79
-        ],
-        "simulation.bench_mujoco.KpiNewtonOverheadHumanoid.track_simulate": [
-            null,
-            [
-                [
-                    "8192"
-                ]
-            ],
-            "fe70e157fca3a62483a36774d09261958a0fedbf90954bc3cd3db4f230fa368d",
-            1769820838298,
-            2.835
         ],
         "simulation.bench_viewer.FastViewerGL.time_rendering_frame": [
             [
