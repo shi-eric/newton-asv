@@ -1,20 +1,23 @@
 {
     "commit_hash": "49ca73b9dd088e48a853aa7033f928f3bd84aa78",
-    "env_name": "virtualenv-py3.12",
     "date": 1782744462000,
+    "durations": {
+        "<setup_cache setup.bench_model:118>": 3.329296
+    },
+    "env_name": "virtualenv-py3.12",
+    "env_vars": {},
     "params": {
         "arch": "x86_64",
         "cpu": "Intel(R) Core(TM) Ultra 9 285K (24 physical cores, 24 logical)",
-        "gpu": "Unknown GPU (NVIDIA expected)",
-        "machine": "newton-benchmark-machine-f36e64c9",
+        "gpu": "NVIDIA NVIDIA GeForce RTX 5090",
+        "machine": "newton-benchmark-machine-7581d8f4",
         "num_cpu": "24",
         "os": "Linux 6.17.0-1017-oem version #17-Ubuntu SMP PREEMPT_DYNAMIC Fri Mar 27 13:48:03 UTC 2026",
-        "ram": "62GB",
-        "python": "3.12"
+        "python": "3.12",
+        "ram": "62GB"
     },
     "python": "3.12",
     "requirements": {},
-    "env_vars": {},
     "result_columns": [
         "result",
         "params",
@@ -31,25 +34,45 @@
         "profile"
     ],
     "results": {
+        "setup.bench_model.FastInitializeModel.peakmem_initialize_model_cpu": [
+            [
+                431185920,
+                759746560,
+                417816576
+            ],
+            [
+                [
+                    "'humanoid'",
+                    "'g1'",
+                    "'cartpole'"
+                ],
+                [
+                    "256"
+                ]
+            ],
+            "889585d54e5e70fe61ed7e1e066b837180ea8bde16da86aa735ad894f10f63f4",
+            1782765179066,
+            7.3874
+        ],
         "simulation.bench_cpu.CpuIKFranka.time_solve": [
             [
-                0.3134977775000607
+                0.2820453629999804
             ],
             [],
             "9fcf20853dc25c179cf22edc84aaecfbc94de82b1f4b033cce852ac472cd553c",
-            1782765416746,
-            13.058,
+            1782765186454,
+            16.12,
             [
-                0.31157
+                0.23923
             ],
             [
-                0.31645
+                0.32686
             ],
             [
-                0.31262
+                0.25809
             ],
             [
-                0.31357
+                0.30805
             ],
             [
                 1
@@ -60,23 +83,23 @@
         ],
         "simulation.bench_cpu.CpuMuJoCoAnt.time_simulate": [
             [
-                0.921327597999948
+                0.9134805249999829
             ],
             [],
             "0a22cae57e12fedfe0c13401c99f74103930eddc22cb682f7ea0c645fea34fab",
-            1782765423451,
-            12.462,
+            1782765192147,
+            28.677,
             [
-                0.90761
+                0.89948
             ],
             [
-                0.93855
+                0.92968
             ],
             [
-                0.9189
+                0.91081
             ],
             [
-                0.92627
+                0.9232
             ],
             [
                 1
@@ -87,23 +110,23 @@
         ],
         "simulation.bench_cpu.CpuXPBDQuadruped.time_simulate": [
             [
-                0.2841673644999787
+                0.2844804629999942
             ],
             [],
             "54b6dd283508ea5212d65e1e09425583d291e6a060bd4cfa3e7626e86079f450",
-            1782765429630,
-            6.129,
+            1782765198170,
+            12.961,
             [
-                0.21598
+                0.21852
             ],
             [
-                0.35541
+                0.35316
             ],
             [
-                0.24753
+                0.24975
             ],
             [
-                0.32383
+                0.3217
             ],
             [
                 1
@@ -118,8 +141,8 @@
             ],
             [],
             "050787e293b420fcbd6a5fe7a12dbff906c9d5a4e3d6a41808b072e5b69bfb98",
-            1782765432537,
-            6.3186
+            1782765200885,
+            8.4683
         ],
         "simulation.bench_mujoco.FastCartpole.time_simulate": [
             [
@@ -127,8 +150,8 @@
             ],
             [],
             "050787e293b420fcbd6a5fe7a12dbff906c9d5a4e3d6a41808b072e5b69bfb98",
-            1782765435472,
-            5.0274
+            1782765204038,
+            5.9764
         ],
         "simulation.bench_mujoco.FastG1.time_simulate": [
             [
@@ -136,8 +159,8 @@
             ],
             [],
             "050787e293b420fcbd6a5fe7a12dbff906c9d5a4e3d6a41808b072e5b69bfb98",
-            1782765437844,
-            11.419
+            1782765206157,
+            13.968
         ],
         "simulation.bench_mujoco.FastHumanoid.time_simulate": [
             [
@@ -145,8 +168,8 @@
             ],
             [],
             "050787e293b420fcbd6a5fe7a12dbff906c9d5a4e3d6a41808b072e5b69bfb98",
-            1782765443362,
-            5.1854
+            1782765213098,
+            7.5283
         ],
         "simulation.bench_mujoco.FastKitchenG1.time_simulate": [
             [
@@ -154,32 +177,9 @@
             ],
             [],
             "050787e293b420fcbd6a5fe7a12dbff906c9d5a4e3d6a41808b072e5b69bfb98",
-            1782765446268,
-            7.0558
-        ],
-        "setup.bench_model.FastInitializeModel.peakmem_initialize_model_cpu": [
-            [
-                431267840,
-                759672832,
-                419581952
-            ],
-            [
-                [
-                    "'humanoid'",
-                    "'g1'",
-                    "'cartpole'"
-                ],
-                [
-                    "256"
-                ]
-            ],
-            "889585d54e5e70fe61ed7e1e066b837180ea8bde16da86aa735ad894f10f63f4",
-            1782765407741,
-            9.0044
+            1782765215686,
+            7.1088
         ]
-    },
-    "durations": {
-        "<setup_cache setup.bench_model:118>": 3.747693
     },
     "version": 2
 }
