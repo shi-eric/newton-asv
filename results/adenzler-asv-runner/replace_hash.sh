@@ -36,8 +36,12 @@ BENCHMARKS["simulation.bench_cpu.CpuMuJoCoAnt.time_simulate"]="0a22cae57e12fedfe
 BENCHMARKS["simulation.bench_cpu.CpuXPBDQuadruped.time_simulate"]="54b6dd283508ea5212d65e1e09425583d291e6a060bd4cfa3e7626e86079f450"
 BENCHMARKS["simulation.bench_heightfield.HeightfieldCollision.time_simulate"]="6d62f8706ec6d05d0274666772150be21a893c0a6f051f33c06bb1f8b3c817b6"
 BENCHMARKS["simulation.bench_ik.FastIKSolve.time_solve"]="e00213950917f07ae44e3e993493cfcb1730b7eaba5277047565a289f98c1f73"
-BENCHMARKS["simulation.bench_inverse_dynamics.FastInverseDynamics.time_eval_inverse_dynamics"]="91509c0a84b20e1a8f3c56f05984a587e6eb80a7dd1ed79bb3f8d2b601b9da20"
-BENCHMARKS["simulation.bench_inverse_dynamics.FastInverseDynamics.time_eval_inverse_dynamics_force"]="f1893d5d7fa234e73de9079a79d148adaf8e641c1c13d72d9aedfb65ae0a9f5f"
+# FastInverseDynamics: history merged across newton #3530 (2026-07-16 rename
+# time_eval_inverse_dynamics -> _passive + _force source refresh; timed regions
+# unchanged, no boundary step on any crossed machine/env). Old keys were renamed
+# in historical result files; old hashes 91509c0a/f1893d5d rewritten below.
+BENCHMARKS["simulation.bench_inverse_dynamics.FastInverseDynamics.time_eval_inverse_dynamics_passive"]="f30af9c4867af17886ff758d055b4a5325385e407a8a2465b1d577e8e0ca47c7"
+BENCHMARKS["simulation.bench_inverse_dynamics.FastInverseDynamics.time_eval_inverse_dynamics_force"]="9f1873a9ea3ce3d13d0a7cff5fe4c94cdaa60c47690cd182fc63ff4216688119"
 BENCHMARKS["simulation.bench_kamino.FastDRLegs.time_simulate"]="5cfc5255e143308d7271e21566a3229823476fd0a40eea57046aeac59d8abf9e"
 BENCHMARKS["simulation.bench_kamino.KpiDRLegs.track_simulate"]="f97a2a73bfc4b72f0cb9112dfee1c26a2aca2d6db02f03df354c5970deabef09"
 BENCHMARKS["simulation.bench_mujoco.FastAllegro.track_simulate"]="7deb8426115b4478e0218848034ff1ce843d79f6fa7c3eab3ae47225cea6f22a"
@@ -49,9 +53,11 @@ BENCHMARKS["simulation.bench_mujoco.FastNewtonOverheadG1.track_simulate"]="fe70e
 BENCHMARKS["simulation.bench_mujoco.FastNewtonOverheadHumanoid.track_simulate"]="fe70e157fca3a62483a36774d09261958a0fedbf90954bc3cd3db4f230fa368d"
 BENCHMARKS["simulation.bench_quadruped_xpbd.FastExampleQuadrupedXPBD.time_simulate"]="50d0cd3276e6b4626370aa795870defa62f275117a504676f0ca58280e23d9ac"
 BENCHMARKS["simulation.bench_selection.FastExampleSelectionCartpoleMuJoCo.time_simulate"]="1d5ae94d0fbd9942b54483081a9ad25b2e28122d1c6749b38c297816aa125377"
-BENCHMARKS["simulation.bench_sensor_tiled_camera.FastSensorTiledCamera.time_rendering_pixel_priority_color_depth"]="43e34a6d7729834ad65f3d6e131839500eee84e1426a69535a08a2adca0e3f4d"
-BENCHMARKS["simulation.bench_sensor_tiled_camera.FastSensorTiledCamera.time_rendering_pixel_priority_color_only"]="797ec2dea702f86345fd76b2d99b60712caa21447f8d56a5a58a23bc8c8206b7"
-BENCHMARKS["simulation.bench_sensor_tiled_camera.FastSensorTiledCamera.time_rendering_pixel_priority_depth_only"]="19cf87fe7b82e5ed67da4ab569faf32888c8b0c80b5989ef96c6de0ce81bbe23"
+# simulation.bench_sensor_tiled_camera.*: intentionally NOT merged across the
+# 2026-07-14 rework (newton #3480: new scenes, renamed classes/methods, ~4x level
+# shift). Old FastSensorTiledCamera.time_rendering_pixel_priority_* history ends
+# there; the new time_render_* series start fresh. Decision: Alain Denzler
+# (Slack, 2026-07-16), recorded 2026-07-18.
 BENCHMARKS["simulation.bench_viewer.FastViewerGL.time_rendering_frame"]="dc458e762bf26467d1e2af3f425b70413cb7675f9a0d646c652bad3d5bf4a670"
 BENCHMARKS["simulation.bench_viewer.KpiViewerGL.time_rendering_frame"]="c25efe60406065ad84bde4908e8f914997f231cfbc4213475b4da9d20809bd87"
 
